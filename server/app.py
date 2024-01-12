@@ -34,5 +34,16 @@ def baked_goods_by_price():
 def most_expensive_baked_good():
     return ''
 
+@app.route('/bakeries')
+def get_bakeries():
+    bakeries_data = [...]
+
+    response = jsonify(bakeries=bakeries_data)
+
+    # Set content type explicitly
+    response.headers['Content-Type'] = 'application/json'
+
+    return response
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
